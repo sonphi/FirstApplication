@@ -11,10 +11,10 @@ COPY ["FirstApplication.csproj", "./"]
 RUN dotnet restore "FirstApplication.csproj"
 COPY . .
 WORKDIR "/src/FirstApplication"
-RUN dotnet build "FirstApplication.csproj" -c Release -o /app/build
+RUN dotnet build "/src/FirstApplication.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "FirstApplication.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "/src/FirstApplication.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
