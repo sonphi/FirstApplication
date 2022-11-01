@@ -35,6 +35,6 @@ steps:
 - task: JenkinsDownloadArtifacts@1
   inputs:
     jenkinsServerConnection: 'Jenkins DevOps'
-    jobName: 'FirstApplication'
+    jobName: 'FirstApplicationPipeLine'
     saveTo: 'jenkinsArtifacts'
     jenkinsBuild: 'LastSuccessfulBuild'
