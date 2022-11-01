@@ -38,3 +38,10 @@ steps:
     jobName: 'FirstApplicationPipeLine'
     saveTo: 'jenkinsArtifacts'
     jenkinsBuild: 'LastSuccessfulBuild'
+- task: AzureWebAppContainer@1
+  inputs:
+    azureSubscription: 'Azure subscription 1(3c3247ea-6d02-4198-8388-bf20078e437a)'
+    appName: 'FirstApplication'
+    deployToSlotOrASE: true
+    resourceGroupName: 'test'
+    slotName: 'production'
